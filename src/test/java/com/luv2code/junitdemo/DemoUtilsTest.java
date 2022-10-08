@@ -76,6 +76,14 @@ public class DemoUtilsTest {
         assertLinesMatch(stringList, demoUtils.getAcademyInList());
     }
 
+    @Test
+    @DisplayName("Throw Exception")
+    void testThrowAndDoesNotThrow() {
+        assertThrows(Exception.class, () -> { demoUtils.throwException(-1); });
+        assertDoesNotThrow(() -> { demoUtils.throwException(1); });
+
+    }
+
     /*
     @AfterEach
     void tearDownAfterEach(){
